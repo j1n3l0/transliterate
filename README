@@ -4,8 +4,7 @@ Provides a transliterate function for clojure
 
 ## Usage
 
-(tr "tr/a-zA-Z0-9/_/s" "This is a test, 123.")
-(tr "a-zA-Z0-9" "_" "This is a test, 123." :s) ;; TODO
+(tr "a-zA-Z0-9" "_" "This is a test, 123." :s) ;; => "_ _ _ _, _."
 
 ## Notes
 
@@ -14,6 +13,6 @@ Plan to make it pure clojure after working out the kinks in the java API :)
 
 ## License
 
-Copyright (C) 2010 Nelo Onyiah
+Copyright (C) 2010 Nelo Onyiah <nelo.onyiah@gmail.com>
 
 Distributed under the Eclipse Public License, the same as Clojure.
