@@ -1,13 +1,19 @@
 # transliterate
 
-FIXME: write description
+Provides a transliterate function for clojure
 
 ## Usage
 
-FIXME: write
+(tr "tr/a-zA-Z0-9/_/s" "This is a test, 123.")
+(tr "a-zA-Z0-9" "_" "This is a test, 123." :s) ;; TODO
+
+## Notes
+
+This Library currently depends on the jtr java library (http://jtr.sourceforge.net/).
+Plan to make it pure clojure after working out the kinks in the java API :)
 
 ## License
 
-Copyright (C) 2010 FIXME
+Copyright (C) 2010 Nelo Onyiah
 
 Distributed under the Eclipse Public License, the same as Clojure.
