@@ -1,8 +1,12 @@
 (ns transliterate.core
-  (import [org.jtr.transliterate Perl5Parser]))
+  (import [org.jtr.transliterate CharacterParser CharacterReplacer]))
+
+(def flags {:c CharacterParser/COMPLEMENT_MASK
+            :d CharacterParser/DELETE_UNREPLACEABLES_MASK
+            :s CharacterParser/SQUASH_DUPLICATES_MASK})
 
 (defn tr
-  "Uses jtr 1.1 from http://jtr.sourceforge.net/"
-  ;; ([pattern replacement string])
-  ([pattern string]
-     (. (Perl5Parser/makeReplacer pattern) doReplacement string)))
+  [from to string & options]
+  (. (doto (new CharacterReplacer from to)
+       (. setFlags (apply + (map #(flags %) options))))
+     doReplacement string))
