@@ -27,6 +27,8 @@
       (is (= "This is a test: 123:" (tr "a-zA-Z0-9 " ":" input :c :d))))
     (testing "All modifiers combined"
       (is (= "This is a test: 123:" (tr "a-zA-Z0-9 " ":" input :c :d :s))))
+    (testing "Invalid modifiers"
+      (is (= "tHIS IS A TEST, 876." (tr "a-zA-Z0-9" "A-Za-z9876543210" input :f))))
     (testing "Octal character replacement"
       (is (= "This_is_a_test__123_" (tr "\\040-\\057" "\\137" input))))
     (testing "Hexadecimal character replacement"

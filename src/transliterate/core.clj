@@ -8,5 +8,5 @@
 (defn tr
   [from to string & options]
   (. (doto (new CharacterReplacer from to)
-       (. setFlags (apply + (map #(flags %) options))))
+       (. setFlags (apply + (map #(get flags % 0) options))))
      doReplacement string))
