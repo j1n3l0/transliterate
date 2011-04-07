@@ -1,15 +1,18 @@
-# transliterate
+# org.clojars.j1n3l0/transliterate
 
-Provides a transliterate function for clojure
+Performs Perl 5-style transliterations on a given string in Clojure
 
 ## Usage
 
-(tr "a-zA-Z0-9" "_" "This is a test, 123." :s) ;; => "_ _ _ _, _."
+  (tr "A-Za-z" "N-ZA-Mn-za-m" "pybwher vf pbby") ;; => "clojure is cool"
 
-## Notes
+## Installation
 
-This Library currently depends on the jtr java library (http://jtr.sourceforge.net/).
-Plan to make it pure clojure after working out the kinks in the java API :)
+Available from clojars.org; add:
+
+  [org.clojars.j1n3l0/transliterate "1.0.0-SNAPSHOT"]
+
+to your project.clj
 
 ## License
 
