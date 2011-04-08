@@ -4,7 +4,12 @@ Performs Perl 5-style transliterations on a given string in Clojure
 
 ## Usage
 
-  (tr "A-Za-z" "N-ZA-Mn-za-m" "pybwher vf pbby") ;; => "clojure is cool"
+  (use '[org.clojars.j1n3l0.transliterate.core :only (tr)])
+  ;=> nil
+  (defn rot-13 [s] (tr "A-Za-z" "N-ZA-Mn-za-m" s))
+  ;=> #'user/rot-13
+  (rot-13 "Pybwher vf pbby")
+  ;=> "Clojure is cool"
 
 ## Installation
 
